@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iseng Dikit 😜</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #fefae0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        text-align: center;
+      }
+      #prankBtn {
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        background-color: #ffb703;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        position: absolute;
+        transition: top 0.2s, left 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mau klik? Cobain aja... 😏</h1>
+      <button id="prankBtn">Klik aku!</button>
+    </div>
+
+    <script>
+      const button = document.getElementById("prankBtn");
+
+      button.addEventListener("mouseenter", () => {
+        const body = document.body;
+        const maxWidth = window.innerWidth - button.offsetWidth;
+        const maxHeight = window.innerHeight - button.offsetHeight;
+
+        const randomX = Math.floor(Math.random() * maxWidth);
+        const randomY = Math.floor(Math.random() * maxHeight);
+
+        button.style.left = `${randomX}px`;
+        button.style.top = `${randomY}px`;
+      });
+    </script>
+  </body>
+</html>
